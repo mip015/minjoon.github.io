@@ -96,18 +96,17 @@ a.cv:hover{text-decoration:underline;text-decoration-thickness:.06em}
 .soc a:hover{background:var(--w);color:var(--k)}
 
 /* acrylics */
-.ac .big{font-size:26vw;margin-left:-.04em}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,24px);align-items:end}
+.ac .big{font-size:15vw;margin-left:-.04em}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(28px,3.5vw,56px) clamp(16px,3vw,48px);align-items:start}
 .fig{margin:0;position:relative}
-.fr{border:1px solid var(--k);padding:8px;background:var(--w)}
-.art{position:relative;overflow:hidden}
-.art svg,.art img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.15)}
-.fig:hover .art svg,.fig:hover .art img,.fig:focus-visible .art svg,.fig:focus-visible .art img{filter:none;animation:gl .4s steps(1,end)}
+.stage{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;aspect-ratio:4/5}
+.stage::before{content:"";position:absolute;inset:-14%;z-index:-1;background:radial-gradient(closest-side,rgba(232,56,26,.34),rgba(232,56,26,0));opacity:0;transition:opacity .4s ease}
+.fig:hover .stage::before,.fig:focus-visible .stage::before{opacity:1}
+.stage img{display:block;width:auto;height:auto;max-width:86%;max-height:88%;filter:grayscale(1) contrast(1.15)}
+.fig:hover .stage img,.fig:focus-visible .stage img{filter:none;animation:gl .4s steps(1,end)}
 @keyframes gl{0%{clip-path:inset(0 0 80% 0);transform:translate(-8px,0)}20%{clip-path:inset(30% 0 40% 0);transform:translate(10px,0)}40%{clip-path:inset(60% 0 10% 0);transform:translate(-5px,0)}60%{clip-path:inset(10% 0 60% 0);transform:translate(6px,0)}80%{clip-path:inset(0);transform:translate(-2px,0)}100%{clip-path:inset(0);transform:none}}
-.art .info{position:absolute;left:0;right:0;bottom:0;background:var(--k);color:var(--w);padding:8px 10px;transform:translateY(101%);transition:transform .18s steps(3)}
-.fig:hover .info,.fig:focus-visible .info{transform:none}
-.fig figcaption{display:flex;justify-content:space-between;padding:8px 2px 0}
-@media (hover:none){.art .info{transform:none}.art svg,.art img{filter:none}}
+.fig figcaption{display:flex;flex-direction:column;padding-bottom:10px;border-bottom:1px solid var(--k);font:500 11px/1.4 var(--sans);letter-spacing:.02em;text-transform:uppercase}
+@media (hover:none){.stage img{filter:none}}
 
 .ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px var(--p);border-top:1px solid var(--k);background:var(--w)}
 .ft a{text-decoration:none;font-weight:700}
@@ -132,7 +131,7 @@ a.cv:hover{text-decoration:underline;text-decoration-thickness:.06em}
 @media (max-width:760px){
 .nodes{grid-template-columns:1fr}.node{min-height:0}
 .log{grid-template-columns:1fr}.log span:last-child{text-align:left}
-.gal{display:block}.fig{margin:0 0 40px!important}
+.gal{gap:28px 14px}
 .mega .ln+.ln{margin-left:12vw}.nav a{padding:0 10px}
 .tag.hide-s{display:none}}
 @media (prefers-reduced-motion:reduce){
@@ -233,33 +232,21 @@ html{scroll-behavior:auto}
   <div class="sh mono"><span>[IDX_04] STUDIO_ARCHIVE</span><span>(ACRYLIC ON CANVAS)</span></div>
   <h2 class="big" data-x=".2" style="margin-bottom:.3em">ARTS</h2>
   <div class="gal">
-    <figure class="fig rv" tabindex="0">
-      <div class="fr"><div class="art">
-        <img src="paintings/crescent.jpg" width="900" height="1200" alt="CRESCENT: acrylic painting of a lit stone bridge arch reflected in canal water at night" loading="lazy">
-        <div class="info mono">CRESCENT<br>CANVAS: 12 × 16 IN<br>MEDIUM: ACRYLIC</div>
-      </div></div>
-      <figcaption class="mono"><span>FIG.01</span><span>CRESCENT</span></figcaption>
+    <figure class="fig" tabindex="0">
+      <div class="stage"><img class="rv" src="paintings/crescent.jpg" width="900" height="1200" alt="CRESCENT: acrylic painting of a lit stone bridge arch reflected in canal water at night" loading="lazy"></div>
+      <figcaption class="rv"><span>FIG.01</span><span>CRESCENT</span><span>12 × 16 IN</span></figcaption>
     </figure>
-    <figure class="fig rv" tabindex="0">
-      <div class="fr"><div class="art">
-        <img src="paintings/pearl.jpg" width="943" height="1200" alt="PEARL: acrylic painting of a round white cartoon character in a blue and yellow head wrap with a pearl earring, after Girl with a Pearl Earring" loading="lazy">
-        <div class="info mono">PEARL<br>CANVAS: 11 × 14 IN<br>MEDIUM: ACRYLIC</div>
-      </div></div>
-      <figcaption class="mono"><span>FIG.02</span><span>PEARL</span></figcaption>
+    <figure class="fig" tabindex="0">
+      <div class="stage"><img class="rv" src="paintings/pearl.jpg" width="943" height="1200" alt="PEARL: acrylic painting of a round white cartoon character in a blue and yellow head wrap with a pearl earring, after Girl with a Pearl Earring" loading="lazy"></div>
+      <figcaption class="rv"><span>FIG.02</span><span>PEARL</span><span>11 × 14 IN</span></figcaption>
     </figure>
-    <figure class="fig rv" tabindex="0">
-      <div class="fr"><div class="art">
-        <img src="paintings/dusk.jpg" width="960" height="1200" alt="DUSK: acrylic painting of a palm tree silhouetted against a blue and orange dusk sky over the sea" loading="lazy">
-        <div class="info mono">DUSK<br>CANVAS: 8 × 10 IN<br>MEDIUM: ACRYLIC</div>
-      </div></div>
-      <figcaption class="mono"><span>FIG.03</span><span>DUSK</span></figcaption>
+    <figure class="fig" tabindex="0">
+      <div class="stage"><img class="rv" src="paintings/dusk.jpg" width="960" height="1200" alt="DUSK: acrylic painting of a palm tree silhouetted against a blue and orange dusk sky over the sea" loading="lazy"></div>
+      <figcaption class="rv"><span>FIG.03</span><span>DUSK</span><span>8 × 10 IN</span></figcaption>
     </figure>
-    <figure class="fig rv" tabindex="0">
-      <div class="fr"><div class="art">
-        <img src="paintings/sunset.jpg" width="1200" height="960" alt="SUNSET: acrylic painting of the sun setting over a lake with a grassy hillside" loading="lazy">
-        <div class="info mono">SUNSET<br>CANVAS: 10 × 8 IN<br>MEDIUM: ACRYLIC</div>
-      </div></div>
-      <figcaption class="mono"><span>FIG.04</span><span>SUNSET</span></figcaption>
+    <figure class="fig" tabindex="0">
+      <div class="stage"><img class="rv" src="paintings/sunset.jpg" width="1200" height="960" alt="SUNSET: acrylic painting of the sun setting over a lake with a grassy hillside" loading="lazy"></div>
+      <figcaption class="rv"><span>FIG.04</span><span>SUNSET</span><span>10 × 8 IN</span></figcaption>
     </figure>
   </div>
 </section>
