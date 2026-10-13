@@ -96,14 +96,14 @@ a.cv:hover{text-decoration:underline;text-decoration-thickness:.06em}
 .soc a:hover{background:var(--w);color:var(--k)}
 
 /* acrylics */
+.ac{background:var(--w)}
 .ac .big{font-size:15vw;margin-left:-.04em}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(28px,3.5vw,56px) clamp(16px,3vw,48px);align-items:start}
 .fig{margin:0;position:relative}
 .stage{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;aspect-ratio:4/5}
-.stage::before{content:"";position:absolute;inset:-14%;z-index:-1;background:radial-gradient(closest-side,rgba(232,56,26,.34),rgba(232,56,26,0));opacity:0;transition:opacity .4s ease}
-.fig:hover .stage::before,.fig:focus-visible .stage::before{opacity:1}
 .stage img{display:block;width:auto;height:auto;max-width:86%;max-height:88%;filter:grayscale(1) contrast(1.15)}
-.fig:hover .stage img,.fig:focus-visible .stage img{filter:none;animation:gl .4s steps(1,end)}
+.fig:hover .stage img,.fig:focus-visible .stage img{filter:none}
+.js .stage img.rv{transition:clip-path .55s linear var(--d,0ms),filter .35s ease}
 @keyframes gl{0%{clip-path:inset(0 0 80% 0);transform:translate(-8px,0)}20%{clip-path:inset(30% 0 40% 0);transform:translate(10px,0)}40%{clip-path:inset(60% 0 10% 0);transform:translate(-5px,0)}60%{clip-path:inset(10% 0 60% 0);transform:translate(6px,0)}80%{clip-path:inset(0);transform:translate(-2px,0)}100%{clip-path:inset(0);transform:none}}
 .fig figcaption{display:flex;flex-direction:column;padding-bottom:10px;border-bottom:1px solid var(--k);font:500 11px/1.4 var(--sans);letter-spacing:.02em;text-transform:uppercase}
 @media (hover:none){.stage img{filter:none}}
@@ -229,24 +229,24 @@ html{scroll-behavior:auto}
 
 <section class="sec ac" id="arts">
   <span class="tag hide-s" style="top:20px;right:var(--p)">(FIG. 02 / STUDIO)</span>
-  <div class="sh mono"><span>[IDX_04] STUDIO_ARCHIVE</span><span>(ACRYLIC ON CANVAS)</span></div>
+  <div class="sh mono"><span>[IDX_04] STUDIO_ARCHIVE</span></div>
   <h2 class="big" data-x=".2" style="margin-bottom:.3em">ARTS</h2>
   <div class="gal">
     <figure class="fig" tabindex="0">
       <div class="stage"><img class="rv" src="paintings/crescent.jpg" width="900" height="1200" alt="CRESCENT: acrylic painting of a lit stone bridge arch reflected in canal water at night" loading="lazy"></div>
-      <figcaption class="rv"><span>FIG.01</span><span>CRESCENT</span><span>12 × 16 IN</span></figcaption>
+      <figcaption class="rv"><span>CRESCENT</span><span>ACRYLIC ON CANVAS</span><span>12 × 16 IN</span><span>9.19.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
       <div class="stage"><img class="rv" src="paintings/pearl.jpg" width="943" height="1200" alt="PEARL: acrylic painting of a round white cartoon character in a blue and yellow head wrap with a pearl earring, after Girl with a Pearl Earring" loading="lazy"></div>
-      <figcaption class="rv"><span>FIG.02</span><span>PEARL</span><span>11 × 14 IN</span></figcaption>
+      <figcaption class="rv"><span>PEARL</span><span>ACRYLIC ON CANVAS</span><span>11 × 14 IN</span><span>7.8.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
       <div class="stage"><img class="rv" src="paintings/dusk.jpg" width="960" height="1200" alt="DUSK: acrylic painting of a palm tree silhouetted against a blue and orange dusk sky over the sea" loading="lazy"></div>
-      <figcaption class="rv"><span>FIG.03</span><span>DUSK</span><span>8 × 10 IN</span></figcaption>
+      <figcaption class="rv"><span>DUSK</span><span>ACRYLIC ON CANVAS</span><span>8 × 10 IN</span><span>6.27.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
       <div class="stage"><img class="rv" src="paintings/sunset.jpg" width="1200" height="960" alt="SUNSET: acrylic painting of the sun setting over a lake with a grassy hillside" loading="lazy"></div>
-      <figcaption class="rv"><span>FIG.04</span><span>SUNSET</span><span>10 × 8 IN</span></figcaption>
+      <figcaption class="rv"><span>SUNSET</span><span>ACRYLIC ON CANVAS</span><span>10 × 8 IN</span><span>5.15.26</span></figcaption>
     </figure>
   </div>
 </section>
