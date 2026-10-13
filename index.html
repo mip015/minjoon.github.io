@@ -31,7 +31,7 @@ section[id],header[id]{scroll-margin-top:44px}
 .nav a:hover{background:var(--r);color:var(--w)}
 
 /* hero */
-.hero{position:relative;min-height:100svh;padding:44px 0 0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.hero{position:relative;padding:44px 0 clamp(16px,3vh,40px);overflow:hidden}
 .mega{margin:0 var(--p);font:600 clamp(56px,15vw,260px)/.86 var(--sans);letter-spacing:-.045em;white-space:nowrap;padding-top:clamp(56px,10vh,120px)}
 .mega .ln{display:block;margin-left:-.04em;will-change:transform;animation:wipe .9s linear backwards}
 .mega .ln+.ln{margin-left:18vw;animation-delay:.18s}
