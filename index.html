@@ -108,6 +108,16 @@ a.cv:hover{text-decoration:underline;text-decoration-thickness:.06em}
 .fig figcaption{display:flex;flex-direction:column;padding-bottom:10px;border-bottom:1px solid var(--k);font:500 11px/1.4 var(--sans);letter-spacing:.02em;text-transform:uppercase}
 @media (hover:none){.stage img{filter:none}}
 
+/* click-to-enlarge */
+.zoom{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:4vh 4vw;background:rgba(255,255,255,.95)}
+.zoom.open{display:flex}
+.zoom figure{margin:0;display:flex;flex-direction:column;width:fit-content;max-width:100%}
+.zoom img{display:block;width:auto;height:auto;max-width:min(72vw,880px);max-height:62vh}
+.zoom figcaption{align-self:stretch;display:flex;flex-direction:column;margin-top:12px;padding-bottom:10px;border-bottom:1px solid var(--k);font:500 11px/1.4 var(--sans);letter-spacing:.02em;text-transform:uppercase}
+.zoom.open img{animation:zin .4s linear}
+@keyframes zin{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.zoom.open img{animation:none}}
+
 .ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px var(--p);border-top:1px solid var(--k);background:var(--w)}
 .ft a{text-decoration:none;font-weight:700}
 .ft a:hover{background:var(--r);color:var(--w)}
@@ -280,6 +290,8 @@ html{scroll-behavior:auto}
 
 <footer class="ft mono"><span>[EOF]</span><span>MINJOON PARK // SAN DIEGO, CA</span><a href="#top">[BACK_TO_TOP]</a></footer>
 
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Enlarged painting. Click anywhere to close." tabindex="-1"><figure><img alt=""><figcaption></figcaption></figure></div>
+
 <script>
 (function(){
 var d=document,de=d.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches,G=80;
@@ -308,6 +320,19 @@ if(cx){
   d.addEventListener('mouseleave',function(){de.classList.remove('mv')});
   d.addEventListener('mouseenter',function(){de.classList.add('mv')});
 }
+/* click a painting to enlarge; click anywhere (or Esc) to close */
+var Z=d.getElementById('zoom'),zi=Z.querySelector('img'),zc=Z.querySelector('figcaption'),lastFig=null;
+function openZ(f){var im=f.querySelector('img');zi.src=im.currentSrc||im.src;zi.alt=im.alt;zc.innerHTML=f.querySelector('figcaption').innerHTML;lastFig=f;Z.classList.add('open');Z.focus({preventScroll:true})}
+function closeZ(){Z.classList.remove('open');if(lastFig)lastFig.focus({preventScroll:true})}
+d.querySelectorAll('.gal .fig').forEach(function(f){
+  f.addEventListener('click',function(){openZ(f)});
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openZ(f)}});
+});
+Z.addEventListener('click',closeZ);
+Z.addEventListener('wheel',function(e){e.preventDefault()},{passive:false});
+Z.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&Z.classList.contains('open'))closeZ()});
+
 function pad(n){n=Math.max(0,Math.round(n));return('0000'+n).slice(-4)}
 
 function tick(){
