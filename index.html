@@ -109,6 +109,9 @@ a.cv:hover{text-decoration:underline;text-decoration-thickness:.06em}
 @media (hover:none){.stage img{filter:none}}
 
 /* click-to-enlarge */
+.fig{cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.stage img,.zoom img{-webkit-user-drag:none;user-select:none}
+.zoom{cursor:pointer}
 .zoom{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:4vh 4vw;background:rgba(255,255,255,.95)}
 .zoom.open{display:flex}
 .zoom figure{margin:0;display:flex;flex-direction:column;width:fit-content;max-width:100%}
@@ -243,31 +246,31 @@ html{scroll-behavior:auto}
   <h2 class="big" data-x=".2" style="margin-bottom:.3em">ARTS</h2>
   <div class="gal">
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/valentines.jpg" width="1200" height="900" alt="VALENTINES DAY: acrylic painting of pink roses bursting out of a mailbox in a blue stairwell" loading="lazy"></div>
+      <div class="stage"><img class="rv" src="paintings/valentines.jpg" width="1200" height="900" alt="VALENTINES DAY" draggable="false" loading="lazy"></div>
       <figcaption class="rv"><span>VALENTINES DAY</span><span>ACRYLIC ON CANVAS</span><span>18 × 24 IN</span><span>11.8.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/summer.jpg" width="1200" height="900" alt="SUMMER: acrylic painting of a Greek island beach with white buildings, blue domes and striped umbrellas beside a turquoise sea" loading="lazy"></div>
-      <figcaption class="rv"><span>SUMMER</span><span>ACRYLIC ON CANVAS</span><span>18 × 24 IN</span><span>10.25.26</span></figcaption>
+      <div class="stage"><img class="rv" src="paintings/summer.jpg" width="1200" height="900" alt="SUMMER BLUES" draggable="false" loading="lazy"></div>
+      <figcaption class="rv"><span>SUMMER BLUES</span><span>ACRYLIC ON CANVAS</span><span>18 × 24 IN</span><span>10.25.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/gondola.jpg" width="1200" height="943" alt="GONDOLA: dark red acrylic painting with a floating eye, a skull, a ladder to a small door and a lamp post on a bridge" loading="lazy"></div>
-      <figcaption class="rv"><span>GONDOLA</span><span>ACRYLIC ON CANVAS</span><span>11 × 14 IN</span><span>10.9.26</span></figcaption>
+      <div class="stage"><img class="rv" src="paintings/gondola.jpg" width="1200" height="943" alt="THE GONDOLA" draggable="false" loading="lazy"></div>
+      <figcaption class="rv"><span>THE GONDOLA</span><span>ACRYLIC ON CANVAS</span><span>11 × 14 IN</span><span>10.9.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/crescent.jpg" width="900" height="1200" alt="CRESCENT: acrylic painting of a lit stone bridge arch reflected in canal water at night" loading="lazy"></div>
-      <figcaption class="rv"><span>CRESCENT</span><span>ACRYLIC ON CANVAS</span><span>12 × 16 IN</span><span>9.19.26</span></figcaption>
+      <div class="stage"><img class="rv" src="paintings/crescent.jpg" width="900" height="1200" alt="REFLECTIONS" draggable="false" loading="lazy"></div>
+      <figcaption class="rv"><span>REFLECTIONS</span><span>ACRYLIC ON CANVAS</span><span>12 × 16 IN</span><span>9.19.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/pearl.jpg" width="943" height="1200" alt="PEARL: acrylic painting of a round white cartoon character in a blue and yellow head wrap with a pearl earring, after Girl with a Pearl Earring" loading="lazy"></div>
-      <figcaption class="rv"><span>PEARL</span><span>ACRYLIC ON CANVAS</span><span>11 × 14 IN</span><span>7.8.26</span></figcaption>
+      <div class="stage"><img class="rv" src="paintings/pearl.jpg" width="943" height="1200" alt="PEARL EARRING" draggable="false" loading="lazy"></div>
+      <figcaption class="rv"><span>PEARL EARRING</span><span>ACRYLIC ON CANVAS</span><span>11 × 14 IN</span><span>7.8.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/dusk.jpg" width="960" height="1200" alt="DUSK: acrylic painting of a palm tree silhouetted against a blue and orange dusk sky over the sea" loading="lazy"></div>
+      <div class="stage"><img class="rv" src="paintings/dusk.jpg" width="960" height="1200" alt="DUSK" draggable="false" loading="lazy"></div>
       <figcaption class="rv"><span>DUSK</span><span>ACRYLIC ON CANVAS</span><span>8 × 10 IN</span><span>6.27.26</span></figcaption>
     </figure>
     <figure class="fig" tabindex="0">
-      <div class="stage"><img class="rv" src="paintings/sunset.jpg" width="1200" height="960" alt="SUNSET: acrylic painting of the sun setting over a lake with a grassy hillside" loading="lazy"></div>
+      <div class="stage"><img class="rv" src="paintings/sunset.jpg" width="1200" height="960" alt="SUNSET" draggable="false" loading="lazy"></div>
       <figcaption class="rv"><span>SUNSET</span><span>ACRYLIC ON CANVAS</span><span>10 × 8 IN</span><span>5.15.26</span></figcaption>
     </figure>
   </div>
@@ -290,7 +293,7 @@ html{scroll-behavior:auto}
 
 <footer class="ft mono"><span>[EOF]</span><span>MINJOON PARK // SAN DIEGO, CA</span><a href="#top">[BACK_TO_TOP]</a></footer>
 
-<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Enlarged painting. Click anywhere to close." tabindex="-1"><figure><img alt=""><figcaption></figcaption></figure></div>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Enlarged painting. Click anywhere to close." tabindex="-1"><figure><img alt="" draggable="false"><figcaption></figcaption></figure></div>
 
 <script>
 (function(){
@@ -323,12 +326,19 @@ if(cx){
 /* click a painting to enlarge; click anywhere (or Esc) to close */
 var Z=d.getElementById('zoom'),zi=Z.querySelector('img'),zc=Z.querySelector('figcaption'),lastFig=null;
 function openZ(f){var im=f.querySelector('img');zi.src=im.currentSrc||im.src;zi.alt=im.alt;zc.innerHTML=f.querySelector('figcaption').innerHTML;lastFig=f;Z.classList.add('open');Z.focus({preventScroll:true})}
-function closeZ(){Z.classList.remove('open');if(lastFig)lastFig.focus({preventScroll:true})}
+function closeZ(){if(!Z.classList.contains('open'))return;Z.classList.remove('open');if(lastFig)lastFig.focus({preventScroll:true})}
+function tap(el,fn){
+  var sx=0,sy=0,pid=null;
+  el.addEventListener('pointerdown',function(e){if(e.button>0)return;pid=e.pointerId;sx=e.clientX;sy=e.clientY});
+  el.addEventListener('pointerup',function(e){if(e.pointerId!==pid)return;pid=null;if(Math.abs(e.clientX-sx)<=14&&Math.abs(e.clientY-sy)<=14)fn()});
+  el.addEventListener('pointercancel',function(){pid=null});
+  el.addEventListener('click',fn);
+}
 d.querySelectorAll('.gal .fig').forEach(function(f){
-  f.addEventListener('click',function(){openZ(f)});
+  tap(f,function(){openZ(f)});
   f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openZ(f)}});
 });
-Z.addEventListener('click',closeZ);
+tap(Z,closeZ);
 Z.addEventListener('wheel',function(e){e.preventDefault()},{passive:false});
 Z.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&Z.classList.contains('open'))closeZ()});
